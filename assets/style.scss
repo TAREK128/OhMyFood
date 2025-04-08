@@ -1,0 +1,483 @@
+
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary-bg: rgba(153, 226, 208, 0.88);
+$color-tertiary-text: #008766;
+$color-white: #FFFFFF;
+$color-black: black;
+$color-light-grey: #F6F6F6;
+$color-medium-grey: #7E7E7E;
+$color-dark-grey: #353535;
+$color-border-grey: #ddd;
+$color-overlay-grey: rgba(53, 53, 53, 0.18);
+
+$font-primary: "Roboto", sans-serif;
+$font-logo: "Shrikhand", cursive;
+
+$spacing-unit: 10px;
+$padding-large: 40px;
+$padding-medium: 20px;
+$padding-small: $spacing-unit;
+$gap-medium: 20px;
+$gap-small: 8px;
+
+$border-radius-circle: 50%;
+$border-radius-large: 25px;
+$border-radius-medium: 20px;
+$border-radius-card: 15px;
+$border-radius-small: 5px;
+
+$shadow-light: 0px 4px 15px rgba(0, 0, 0, 0.15);
+$shadow-hover: 4px 6px 15px rgba(0, 0, 0, 0.3);
+$shadow-small: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
+
+$anim-duration-loader: 3s;
+$anim-duration-spin: 1s;
+$anim-duration-fadein: 3.5s;
+$transition-duration: 0.3s;
+
+$breakpoint-desktop: 1024px;
+
+// Placeholders (for @extend)
+%flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%common-shadow {
+  box-shadow: $shadow-light;
+}
+
+%base-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// Mixins
+@mixin font-style($family: $font-primary, $weight: normal, $size: inherit) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+// Main Styles
+Body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.loader-container {
+  @extend %flex-center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: $color-white;
+  animation: fadeOut $anim-duration-loader forwards;
+
+  .loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid $color-border-grey;
+    border-top: 5px solid $color-primary;
+    border-radius: $border-radius-circle;
+    animation: spin $anim-duration-spin linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.content {
+  text-align: center;
+  padding: 50px;
+  opacity: 0;
+  animation: fadeIn $anim-duration-fadein forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+header {
+  width: 100%;
+
+  img {
+    width: 50%;
+    height: 60px;
+    padding: $padding-large 0 $padding-medium;
+  }
+
+  a {
+    @extend %common-shadow;
+    display: flex;
+    align-items: center;
+    gap: $gap-medium;
+    justify-content: center;
+    text-decoration: none;
+    background: $color-overlay-grey;
+    color: $color-black;
+    width: 100%;
+    height: 50px;
+
+    input {
+      border: none;
+      background: none;
+    }
+  }
+}
+
+.text-food {
+  background: $color-light-grey;
+  padding: $padding-large;
+
+  h2, p {
+    @include font-style($family: $font-primary);
+  }
+
+  p {
+    @include font-style($weight: 300, $size: 18px);
+  }
+}
+
+.search-button {
+  @extend %common-shadow;
+  border: none;
+  border-radius: $border-radius-large;
+  background: linear-gradient(193.33deg, $color-primary -11.44%, $color-secondary 123.93%);
+  width: 212px;
+  height: 52px;
+  margin-top: $padding-medium;
+  transition: all $transition-duration ease;
+
+  &:hover {
+    filter: brightness(1.1);
+    box-shadow: $shadow-hover;
+  }
+
+  .search-text {
+    @include font-style($family: $font-primary, $weight: 500, $size: 16px);
+    color: $color-white;
+  }
+}
+
+.list-Restaurants {
+  background-color: $color-light-grey;
+  padding: $padding-medium 0;
+
+  .Restaurants-title {
+    text-align: justify;
+    margin-left: $padding-medium;
+    @include font-style($family: $font-primary);
+  }
+}
+
+.form {
+  text-align: center;
+  background: $color-white;
+  margin: $padding-medium;
+  border-radius: $border-radius-card;
+
+  .iko {
+    @extend %common-shadow;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    border-radius: $border-radius-card;
+
+    a {
+      list-style: none;
+      text-decoration: none;
+      color: $color-black;
+    }
+
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: $border-radius-card $border-radius-card 0 0;
+      object-fit: cover;
+    }
+  }
+}
+
+.image-container {
+  position: relative;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+
+  .text-over-image {
+    @include font-style($family: $font-primary, $size: 15px);
+    position: absolute;
+    top: 3%;
+    left: 70%;
+    background: $color-tertiary-bg;
+    color: $color-tertiary-text;
+    padding: $spacing-unit $padding-medium;
+    text-align: center;
+    border-radius: $border-radius-small;
+    box-shadow: $shadow-small;
+  }
+}
+
+.card-txt {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: $spacing-unit;
+
+  i {
+    font-size: 25px;
+    margin-right: 15px;
+    margin-top: $spacing-unit;
+    color: $color-black;
+    transition: color $transition-duration ease;
+
+    &:active::before {
+      content: "\f004";
+      color: $color-primary;
+    }
+  }
+}
+
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin-left: $spacing-unit;
+  margin-bottom: $spacing-unit;
+  @include font-style($family: $font-primary);
+
+  .card-title {
+    margin: 0;
+  }
+}
+
+.form-site {
+  padding: $padding-medium;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  h2 {
+    @include font-style($family: $font-primary);
+    text-align: left;
+    margin-left: $padding-medium;
+  }
+
+  ul {
+    @extend %base-list;
+    gap: $gap-medium;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      a {
+        @extend %common-shadow;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        border: 3px solid $color-light-grey;
+        border-radius: $border-radius-medium;
+        padding: $gap-small;
+        gap: $gap-medium;
+        font-weight: bold;
+        height: 50px;
+        color: $color-black;
+        width: 85%;
+        justify-content: space-evenly;
+      }
+
+      p {
+        @include font-style($family: $font-primary);
+      }
+
+      i {
+        color: $color-medium-grey;
+        font-size: 20px;
+        transition: color $transition-duration ease;
+
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
+
+  .nemro1 {
+    @extend %flex-center;
+    background-color: $color-primary;
+    border-radius: $border-radius-circle;
+    color: $color-white;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    left: $spacing-unit;
+  }
+}
+
+.icons {
+  width: 20%;
+
+  i {
+    &.fa-solid.fa-heart {
+      opacity: 0;
+      position: absolute;
+      transition: opacity $transition-duration ease;
+    }
+
+    &.fa-regular.fa-heart {
+      position: absolute;
+      transition: opacity $transition-duration ease;
+    }
+  }
+
+  &:hover {
+    i {
+      &.fa-regular.fa-heart {
+        opacity: 0;
+      }
+
+      &.fa-solid.fa-heart {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color-dark-grey;
+  color: $color-white;
+  padding: $padding-medium;
+
+  .footer1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h3 {
+      margin-bottom: 15px;
+      @include font-style($family: $font-logo, $weight: 400, $size: 18px);
+      font-style: italic;
+      width: 59%;
+    }
+
+    ul {
+      @extend %base-list;
+
+      li {
+        a {
+          text-decoration: none;
+          color: $color-white;
+          display: flex;
+          align-items: center;
+          gap: $gap-small;
+        }
+
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  header {
+    img {
+      width: 21%;
+    }
+  }
+
+  .form-site {
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        width: 30%;
+      }
+    }
+  }
+
+  section.Restaurants {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .form-list {
+    display: flex;
+    flex-grow: inherit;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form {
+    width: 45%;
+  }
+
+  footer {
+    .footer1 {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+    }
+
+    article.ftr1 {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+
+      h3 {
+        display: flex;
+        justify-self: end;
+        width: auto;
+        margin-left: 70px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        gap: $gap-medium;
+
+        li {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+

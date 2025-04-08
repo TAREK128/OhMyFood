@@ -1,0 +1,467 @@
+
+
+    body{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+   
+      
+      /* المجموعة التي تحتوي على زر الرجوع والشعار */
+      .top-elements {
+        display: flex;
+        align-items: center;
+        gap: 50px; 
+        padding: 20px;
+        justify-content: center;
+      }
+      
+      /* م لتنسيق زر الرجوع والشعار*/
+      .back-button {
+        text-decoration: none;
+        color: inherit;
+        font-size: 30px;
+        position: absolute;
+    left: 20px;
+      }
+      
+      .logo {
+       width: 66%;
+       align-items: center;
+      }
+      
+      /* تنسيق الصورة الثانية */
+      .ilg1 {
+        width: 100%;
+        max-width: 800px; /* يمكنك تحديد الحد الأقصى لحجم الصورة */
+        object-fit: cover;
+      }
+
+    
+        .main-contine {
+          background-color: #f6f6f6;
+          padding: 10px;
+          border-radius: 40px;
+          border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+          position: relative;
+          margin-top: -50px;
+          
+      }
+
+    .entree {
+ display: flex;
+ justify-content: space-between;
+        align-items: baseline;
+    }
+    .titlepag1 {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+    
+.entree h2{
+    font-family: Shrikhand;
+font-weight: 400;
+font-style: italic;
+font-size: 30px;
+line-height: 40.82px;
+}
+
+
+
+.entree {
+  display: flex;
+  align-items: center; /* يضمن أن جميع العناصر مصطفة بشكل جيد */
+  gap: 29px; /* يترك مسافة بين العناصر */
+  justify-content: center;
+}
+
+i.fa-solid.fa-heart {
+  display: none; 
+  font-size: 25px;
+}
+
+.entree:hover i.fa-regular.fa-heart {
+  display: none; /* إخفاء القلب الفارغ عند التفاعل */
+}
+
+.entree:hover i.fa-solid.fa-heart {
+  display: inline-block; /* إظهار القلب الممتلئ عند التفاعل */
+}
+
+/* اضافة خط تحت الكلمة */
+span.partial-border {
+    border-bottom: 3px solid #99E2D0;
+    width:8%;
+    display: flex;
+    margin-top: 7px;
+}
+/* حجم ايقونة الالقلب*/
+.entree i.fa-regular.fa-heart {
+    font-size: 25px;
+}
+i.fa-duotone.fa-solid.fa-circle-check {
+  color: white;
+}
+/* خصئص ارتكال القوائم */
+.ook {
+    border-radius: 15px;
+    box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+    display: flex;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    background-color: white;
+    height: 74px;
+    
+} 
+/* خصائص النصوص والايقونة للقوائم*/
+.card-txt {
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Roboto';
+    width: 100%;
+  }
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 17px;
+    font-family: 'Roboto';
+    line-height: 1;
+    padding: 13px;
+    width: 65%; /* اجعل العرض 100% */
+    gap: 5px;
+    transition: width 0.3s ease;
+  }
+  
+
+  .card-title,
+.card-subtitle {
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  transition: width 0.3s ease;
+  white-space: nowrap;
+  width: 100%;
+}
+.ook:hover .text-content {
+  width: 70%; /* لتفسح مكانًا لـ checkmark */
+}
+
+.ook:hover .card-title,
+.ook:hover .card-subtitle {
+  white-space: nowrap; /* يمنع الالتفاف */
+  width: 100%;
+}
+
+
+  .price-checkmark-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
+    width: 35%;
+    overflow: hidden;
+}
+
+  .card-txt .price{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 15px;
+
+}
+p.promier {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+.checkmark {
+  position: relative;
+  right: 0px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #99E2D0;
+  width: 45%;
+  height: 74px;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  opacity: 0;
+  transform: translateX(35px);
+}
+
+.ook:hover .checkmark {
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.card-txt .price {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  position: relative;
+  left: 47px;
+}
+
+.ook:hover .price {
+  transform: translateX(-40px);
+}
+
+
+
+h3.card-title {
+  margin-bottom: 11px;
+  font-size: 18px;
+}
+.card-subtitle{
+  font-size: 16px;
+}
+
+
+  .form2 {
+    margin-top: 40px;
+}
+.form3 {
+  margin-top: 40px;
+}
+.search-Commander {
+  width: 50%;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: none;
+}
+.search-comd{
+  font-family: Roboto;
+font-size: 16px;
+color: #FFFFFF;
+}
+.search-Commander:hover{
+  filter: brightness(1.1);
+  box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.3); 
+}
+footer {
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+}
+
+.footer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ftr1 h3 {
+  margin-bottom: 15px;
+  font-family: Shrikhand;
+font-weight: 400;
+font-style: italic;
+font-size: 25px;
+text-align: left;
+}
+.ftr1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.ftr1 li {
+  margin-bottom: 10px;
+}
+.ftr1 a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 25px;
+  font-family: 'Roboto';
+}
+.ftr1 i {
+  font-size: 18px;
+}
+article.ftr1 {
+  padding: 20px;
+}
+li p {
+  margin: 0px;
+}
+@media (max-width: 515.98px) {
+
+  .ook{
+    width: 100%;
+  }
+ }
+
+ @media (min-width: 1024px) {
+  body {
+      font-size: 18px; /* تكبير حجم النص */
+      
+      margin: 0 auto; /* توسيط الموقع */
+  }
+
+  .ook {
+      width: 80%; /* جعل العناصر أصغر قليلًا */
+      margin: 10px auto; /* توسيط العناصر */
+  }
+
+  .price-checkmark-container {
+     width: 72%;
+     transition: transform 0.3s ease;
+  }
+  .ilg1 {
+    height: 383px;
+    object-fit: cover;
+    max-width: 2000px;
+}
+.checkmark {
+  right: -30px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #99E2D0;
+  width: 16%; 
+  height: 74px;
+  transition: right 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  justify-content: space-around;
+  border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+  right: 0px;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateX(35px);
+}
+.ook:hover .price {
+  transform: translateX(-10px);
+  opacity: 1;
+}
+
+.ook:hover .checkmark {
+  opacity: 1; /* تظهر */
+  
+}
+.entree {
+  display: flex;
+  justify-content: center;
+         align-items: baseline;
+         gap: 20px;
+     }
+     
+     p.promier {
+      width: 80%;
+      margin: 9px auto;
+      text-align: left;
+      font-family: Roboto;
+      font-size: 25px;
+  }
+  span.partial-border {
+  
+    width: 6%;
+}
+.search-Commander {
+  width: 25%;
+  height: 70px;
+  border-radius: 35px;
+}
+.search-comd {
+  font-size: 27px;
+}
+footer .footer1 {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+article.ftr1 {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+}
+footer .ftr1 h3{
+  display: flex;
+  justify-self: end;
+  width: auto;
+  margin-left: 23px;
+  font-size: 18px;
+}
+
+footer .ftr1 ul {
+  display: flex;
+      flex-direction: row;
+      gap: 20px;
+}
+footer .ftr1 ul li {
+  display: flex;
+    align-items: center;
+}
+footer .footer1 ul li a {
+  font-size: 17px;
+}
+.main-contine {
+  background-color: #f6f6f6;
+  padding: 10px;
+  border-radius: 40px;
+  border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+  position: relative;
+  margin-top: -50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.entree {
+  display: flex;
+  align-items: center;
+  gap: 38px; 
+}
+.text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 17px;
+  font-family: 'Roboto';
+  line-height: 1;
+  padding: 10px;
+  width: 90%;
+  gap: 4px;
+  left: 10px;
+  position: relative;
+}
+.ook {
+  border-radius: 15px;
+  box-shadow: 0px 4.01px 15.04px 0px #0000001A;
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: white;
+  
+} 
+
+.card-title,
+  .card-subtitle {
+    white-space: normal;  
+    overflow: visible;         
+    text-overflow: unset;       
+    width: auto;                
+  }
+  .card-txt .price {
+    position: relative;
+    left: 29px;
+}
+.ook:hover .price {
+  transform: translateX(-33px);
+}
+}

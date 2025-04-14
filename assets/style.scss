@@ -60,6 +60,7 @@ $breakpoint-desktop: 1024px;
   font-family: $family;
   font-weight: $weight;
   font-size: $size;
+ 
 }
 
 // Main Styles
@@ -282,8 +283,8 @@ header {
   padding: $padding-medium;
   display: flex;
   flex-direction: column;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 20px;
+  padding-right: 20px;
 
   h2 {
     @include font-style($family: $font-primary);
